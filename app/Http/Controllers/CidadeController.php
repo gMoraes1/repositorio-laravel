@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cidade;
+use App\Models\cidade;
 use Illuminate\Support\Facades\Redirect;
 
 class CidadeController extends Controller
@@ -23,7 +23,7 @@ class CidadeController extends Controller
         $registros = $request->validate([
             'nomeCidade' => 'string|required',
             'numeroPopulacao' => 'integer|required',
-            'silgaCidade' => 'string|required',
+            'siglaCidade' => 'string|required',
             'nomeVereador' => 'string|required'
         ]);
 
@@ -31,7 +31,8 @@ class CidadeController extends Controller
         return Redirect::route('home-cidade');
     }
 
-    public function Destroy(Cidade $id)
+
+    public function Destroy(cidade $id)
     {
         $id->delete();
         return Redirect::route('home-cidade');
@@ -44,19 +45,20 @@ class CidadeController extends Controller
             'siglaCidade' => 'string|required',
             'nomeVereador' => 'string|required'
         ]);
+        
         $id->fill($registros);
         $id->save();
 
         return Redirect::route('home-cidade');
     }
-    public function MostrarCidadeCodigo(Cidade $id)
+    public function MostrarCidadeCodigo(cidade $id)
     {
         return view("alteracidade", ['registrosCidade' => $id]);
     }
 
     public function MostrarCidadeNome(Request $request)
     {
-        $registros = Cidade::query();
+        $registros = cidade::query();
         $registros->when($request->nomeCidade, function ($query, $valor) {
             $query->where('nomeCidade', 'like', '%' . $valor . '%');
         });

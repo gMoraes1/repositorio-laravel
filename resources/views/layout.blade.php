@@ -31,7 +31,7 @@
                             <a class="nav-link" href="{{route('show-cadastro-cidade')}}">Cadastrar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('altera-cidade')}}">Gerenciar</a>
+                            <a class="nav-link" href="{{route('lista-cidade')}}">Gerenciar</a>
                         </li>
                     </ul>
                 </div>
