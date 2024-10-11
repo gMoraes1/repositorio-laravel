@@ -5,7 +5,7 @@
     body {
         margin: 0;
         padding: 0;
-        height: 100vh; 
+        height: 100vh;
         background-image: url('assets/foto.jpg');
         background-size: cover;
         background-position: center;
@@ -23,6 +23,6 @@
     }
 </style>
 
-<h1>Home Cidade</h1>
+<h1>Cadastre sua Cidade</h1>
 
 @endsection
